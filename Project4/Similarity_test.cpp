@@ -7,28 +7,28 @@ using namespace testing;
 TEST(LengthTest, SameCase) {
 	Length length;
 
-	double  result = length.calLengthScore("abc", "abv");
+	double  result = length.calLengthScore("ABC", "ABV");
 	EXPECT_EQ(60, result);
 }
 
 TEST(LengthTest, 1DiffCase) {
 	Length length;
 
-	double  result = length.calLengthScore("ab", "abv");
+	double  result = length.calLengthScore("AB", "ABV");
 	EXPECT_EQ(30, result);
 }
 
 TEST(LengthTest, 2xDiffCase) {
 	Length length;
 
-	double  result = length.calLengthScore("ab", "abvv");
+	double  result = length.calLengthScore("AB", "ABVV");
 	EXPECT_EQ(0, result);
 }
 
 TEST(LengthTest, 2xOverDiffCase) {
 	Length length;
 
-	double  result = length.calLengthScore("ab", "abvvdfsd");
+	double  result = length.calLengthScore("AB", "ABCDEFG");
 	EXPECT_EQ(0, result);
 }
 
